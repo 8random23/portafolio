@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saim Isidro Castillo | Portafolio de Ciberseguridad & Redes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#0a0714',
+                            card: '#130d24',
+                            border: '#2a1b4e',
+                            primary: '#a855f7',
+                            accent: '#ec4899',
+                            text: '#f3e8ff'
+                        },
+                        enterprise: {
+                            bg: '#f8fafc',
+                            card: '#ffffff',
+                            border: '#cbd5e1',
+                            primary: '#0284c7',
+                            accent: '#0d9488',
+                            text: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-cyber-text font-sans antialiased selection:bg-purple-500 selection:text-white dark:bg-cyber-bg dark:text-cyber-text" id="body-root">
+
+    <!-- BARRA DE NAVEGACIÓN Y SELECTOR DE TEMA -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-cyber-bg/80 border-b border-cyber-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Marca / Terminal Header -->
+                <div class="flex items-center gap-3">
+                    <div class="p-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-400 font-mono text-xs font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>saim@sec:~#</span>
+                    </div>
+                    <span class="font-bold text-base tracking-tight hidden sm:inline">Saim Isidro Castillo</span>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div class="hidden md:flex items-center gap-6 font-medium text-xs font-mono">
+                    <a href="#about" class="hover:text-purple-400 transition-colors">SOBRE MÍ</a>
+                    <a href="#skills" class="hover:text-purple-400 transition-colors">SKILLS</a>
+                    <a href="#soft-skills" class="hover:text-purple-400 transition-colors">HABILIDADES BLANDAS</a>
+                    <a href="#portfolio" class="hover:text-purple-400 transition-colors">PORTAFOLIO</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors">CONTACTO</a>
+                </div>
+
+                <!-- Botón de Alternar Tema (Red Team Cyber vs Defensive Enterprise) -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="relative inline-flex items-center justify-between w-36 h-9 px-3 rounded-full bg-cyber-card border border-cyber-border text-[11px] font-semibold focus:outline-none">
+                        <span id="theme-text-dark" class="text-purple-400 font-mono flex items-center gap-1 z-10">
+                            <i class="fa-solid fa-shield-halved text-xs"></i> Cyber
+                        </span>
+                        <span id="theme-text-light" class="text-slate-400 font-mono flex items-center gap-1 z-10 opacity-50">
+                            <i class="fa-solid fa-building text-xs"></i> Defense
+                        </span>
+                        <div id="theme-toggle-pill" class="absolute top-1 left-1 w-16 h-7 rounded-full bg-purple-600/30 border border-purple-400/50 transition-all duration-300"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INICIO / HERO & SOBRE MÍ -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Información Personal -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-950/60 border border-purple-500/30 text-purple-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Disponibilidad para Practicante de Ciberseguridad & Redes</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                    Saim Isidro Castillo
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-2xl sm:text-3xl mt-2 font-mono">
+                        Ingeniería en Ciberseguridad | SENATI
+                    </span>
+                </h1>
+
+                <!-- Bloque Sobre Mí -->
+                <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border space-y-3">
+                    <h3 class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-user-gear mr-1"></i> Perfil Profesional & Biografía
+                    </h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Con 20 años de edad, soy estudiante de <strong>5to ciclo de la carrera de Ciberseguridad en SENATI</strong>. Cuento con formación técnica en seguridad de la información, administración de redes y entornos Linux. Me caracterizo por mi proactividad, responsabilidad y capacidad de aprendizaje práctico. Motivado por integrarme a un equipo técnico como practicante, aportando valor y desarrollando competencias operativas desde el primer día.
+                    </p>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#contact" class="px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs shadow-lg flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Contactarme
+                    </a>
+                    <a href="#portfolio" class="px-5 py-2.5 rounded-lg border border-cyber-border bg-cyber-card text-xs font-semibold hover:border-purple-500/50 flex items-center gap-2">
+                        <i class="fa-solid fa-folder-open"></i> Ver Proyectos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Espacio para Imagen Personal o Terminal Interactivo -->
+            <div class="lg:col-span-5">
+                <!-- CONTENEDOR DE IMAGEN / MOCKUP -->
+                <div class="rounded-xl border border-cyber-border bg-cyber-card overflow-hidden p-4 relative group">
+                    <div class="text-center p-6 border-2 border-dashed border-purple-500/30 rounded-lg bg-slate-950/40">
+                        <i class="fa-solid fa-image text-4xl text-purple-400/50 mb-3"></i>
+                        <p class="text-xs font-mono text-purple-300 font-bold">ESPACIO PARA TU FOTO O LOGO</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Reemplaza la etiqueta <code class="bg-purple-950 px-1 py-0.5 rounded text-purple-300">&lt;img&gt;</code> en el código con tu foto personal o de avatar.</p>
+                    </div>
+
+                    <!-- Código interactivo / Terminal simulado debajo -->
+                    <div class="mt-4 p-4 rounded bg-slate-950 border border-cyber-border font-mono text-xs text-slate-300">
+                        <div class="flex items-center gap-2 text-slate-500 border-b border-slate-800 pb-2 mb-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                            <span class="ml-auto text-[10px]">info.sh</span>
+                        </div>
+                        <p><span class="text-purple-400">saim@senati</span>:~$ cat datos.json</p>
+                        <p class="text-emerald-400">{ "Edad": 20, "Ciclo": "5to Ciclo SENATI", "OS": "Linux Ubuntu / Pop!_OS" }</p>
+                        <p class="mt-1"><span class="text-purple-400">saim@senati</span>:~$ <span class="w-2 h-4 bg-purple-400 inline-block cursor-blink"></span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS / HARD SKILLS -->
+    <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyber-border/40">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-purple-400 uppercase">Competencias Técnicas</h2>
+            <p class="text-3xl font-bold mt-1">Skills & Conocimientos</p>
+            <p class="text-slate-400 text-xs mt-1">Formación técnica desarrollada durante la carrera en SENATI y laboratorios prácticos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Skill 1 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Fundamentos de Ciberseguridad</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Introducción y dominio de los principios fundamentales de la ciberseguridad, confidencialidad, integridad, disponibilidad y gestión básica de riesgos.
+                </p>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-indigo-950/60 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4">
+                    <i class="fa-solid fa-network-wired text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Arquitectura e Infraestructura de Redes</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Conceptos fundamentales de redes de datos, direccionamiento IP, modelo OSI/TCP-IP, componentes de hardware y topologías físicas/lógicas.
+                </p>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
+                    <i class="fa-solid fa-wifi text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Seguridad en Redes LAN y WLAN</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Dominio en la configuración, segmentación mediante VLANs y aseguramiento de redes locales cableadas e inalámbricas.
+                </p>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+                    <i class="fa-solid fa-lock text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Protección y Automatización de Infraestructuras</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Formación orientada al endurecimiento (hardening) de red, aspectos de seguridad perimetral, conectividad empresarial y automatización.
+                </p>
+            </div>
+
+            <!-- Skill 5 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-pink-950/60 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-4">
+                    <i class="fa-brands fa-linux text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Sistemas Linux & Pentesting</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Uso y administración de sistemas Linux (Ubuntu) a través de línea de comandos (CLI) y manejo de herramientas básicas de pruebas de penetración.
+                </p>
+            </div>
+
+            <!-- Skill 6 -->
+            <div class="p-6 rounded-xl bg-cyber-card border border-cyber-border hover:border-purple-500/40 transition-all">
+                <div class="w-10 h-10 rounded-lg bg-yellow-950/60 border border-purple-500/30 flex items-center justify-center text-amber-400 mb-4">
+                    <i class="fa-solid fa-box-archive text-lg"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Virtualización & Despliegue de Labs</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Administración y aislamiento de máquinas virtuales con VirtualBox. Uso de Kali Linux para proyectos académicos y laboratorios de práctica controlados.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HABILIDADES BLANDAS / SOFT SKILLS -->
+    <section id="soft-skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyber-border/40">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-purple-400 uppercase">Valores y Aptitudes</h2>
+            <p class="text-3xl font-bold mt-1">Habilidades Blandas</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-people-group text-purple-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Trabajo en Equipo</h4>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-clock text-emerald-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Puntualidad</h4>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-sliders text-cyan-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Adaptabilidad</h4>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-user-check text-indigo-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Responsabilidad</h4>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-handshake text-pink-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Respeto</h4>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border text-center hover:border-purple-500/40 transition-all">
+                <i class="fa-solid fa-brain text-amber-400 text-xl mb-2"></i>
+                <h4 class="text-xs font-bold">Aprendizaje Práctico</h4>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO / PROYECTOS (SECCIÓN VACÍA Y PREPARADA PARA AGREGAR FOTOS Y TEXTOS) -->
+    <section id="portfolio" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyber-border/40">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-purple-400 uppercase">Casos Prácticos & Evidencias</h2>
+            <p class="text-3xl font-bold mt-1">Portafolio de Proyectos</p>
+            <p class="text-slate-400 text-xs mt-1">En esta sección irás agregando tus laboratorios con sus respectivas capturas de pantalla.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- TARJETA DE PROYECTO 1 (Plantilla para colocar imagen) -->
+            <div class="rounded-xl border border-cyber-border bg-cyber-card overflow-hidden flex flex-col justify-between">
+                <!-- Zona de Imagen / Placeholder -->
+                <div class="h-44 bg-slate-950 border-b border-cyber-border p-4 flex flex-col items-center justify-center text-center relative group">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-purple-500/40 mb-2"></i>
+                    <p class="text-xs font-mono text-purple-300 font-bold">PON AQUÍ LA IMAGEN DEL PROYECTO 1</p>
+                    <p class="text-[10px] text-slate-500">Ejemplo: Captura de GNS3 o FortiGate</p>
+                </div>
+                <div class="p-5 space-y-3">
+                    <span class="text-[10px] font-mono text-indigo-400 font-bold bg-indigo-950/50 px-2 py-0.5 rounded border border-indigo-500/30">Infraestructura</span>
+                    <h3 class="text-base font-bold">Título del Proyecto 1</h3>
+                    <p class="text-xs text-slate-400">
+                        Escribe aquí una breve descripción del laboratorio que realizaste (por ejemplo: laboratorio de FortiGate, VLANs o enrutamiento).
+                    </p>
+                    <div class="flex flex-wrap gap-1 pt-2">
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">GNS3</span>
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">FortiGate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA DE PROYECTO 2 (Plantilla para colocar imagen) -->
+            <div class="rounded-xl border border-cyber-border bg-cyber-card overflow-hidden flex flex-col justify-between">
+                <!-- Zona de Imagen / Placeholder -->
+                <div class="h-44 bg-slate-950 border-b border-cyber-border p-4 flex flex-col items-center justify-center text-center relative group">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-cyan-500/40 mb-2"></i>
+                    <p class="text-xs font-mono text-cyan-300 font-bold">PON AQUÍ LA IMAGEN DEL PROYECTO 2</p>
+                    <p class="text-[10px] text-slate-500">Ejemplo: Captura de Wazuh / Logs</p>
+                </div>
+                <div class="p-5 space-y-3">
+                    <span class="text-[10px] font-mono text-cyan-400 font-bold bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-500/30">Monitoreo / SIEM</span>
+                    <h3 class="text-base font-bold">Título del Proyecto 2</h3>
+                    <p class="text-xs text-slate-400">
+                        Escribe aquí la descripción de tu proyecto de monitoreo (ejemplo: recolección de eventos Syslog en Wazuh SIEM).
+                    </p>
+                    <div class="flex flex-wrap gap-1 pt-2">
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">Wazuh</span>
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">MikroTik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA DE PROYECTO 3 (Plantilla para colocar imagen) -->
+            <div class="rounded-xl border border-cyber-border bg-cyber-card overflow-hidden flex flex-col justify-between">
+                <!-- Zona de Imagen / Placeholder -->
+                <div class="h-44 bg-slate-950 border-b border-cyber-border p-4 flex flex-col items-center justify-center text-center relative group">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-emerald-500/40 mb-2"></i>
+                    <p class="text-xs font-mono text-emerald-300 font-bold">PON AQUÍ LA IMAGEN DEL PROYECTO 3</p>
+                    <p class="text-[10px] text-slate-500">Ejemplo: Foto de Cableado o Rack</p>
+                </div>
+                <div class="p-5 space-y-3">
+                    <span class="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/30">Red Físicas / CCTV</span>
+                    <h3 class="text-base font-bold">Título del Proyecto 3</h3>
+                    <p class="text-xs text-slate-400">
+                        Descripción de instalación física, armado de cables de red bajo norma T568B o configuración de grabadores NVR.
+                    </p>
+                    <div class="flex flex-wrap gap-1 pt-2">
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">Cat 5e</span>
+                        <span class="text-[9px] font-mono bg-cyber-bg px-2 py-0.5 rounded border border-cyber-border">NVR Tiandy</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyber-border/40">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div>
+                    <h2 class="text-xs font-mono font-semibold tracking-widest text-purple-400 uppercase">Contacto Directo</h2>
+                    <p class="text-3xl font-bold mt-1">¿Iniciamos contacto?</p>
+                    <p class="text-slate-400 text-xs mt-1">Disponible para incorporarme como practicante en áreas de infraestructura, redes o ciberseguridad.</p>
+                </div>
+
+                <div class="space-y-3 font-mono text-xs">
+                    <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-purple-400 text-base"></i>
+                        <div>
+                            <p class="text-slate-500 text-[10px]">INSTITUCIÓN</p>
+                            <p class="font-bold text-slate-200">SENATI (5to Ciclo - Ciberseguridad)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-purple-400 text-base"></i>
+                        <div>
+                            <p class="text-slate-500 text-[10px]">CORREO ELECTRÓNICO</p>
+                            <p class="font-bold text-slate-200">saimisidrocastillo@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-purple-400 text-base"></i>
+                        <div>
+                            <p class="text-slate-500 text-[10px]">UBICACIÓN</p>
+                            <p class="font-bold text-slate-200">Lima, Perú</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario interactivo -->
+            <div class="lg:col-span-7">
+                <form onsubmit="event.preventDefault(); alert('Mensaje simulado enviado con éxito.');" class="p-6 rounded-xl bg-cyber-card border border-cyber-border space-y-4">
+                    <h3 class="text-base font-bold">Enviar mensaje</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[11px] font-mono text-slate-400 mb-1">Nombre</label>
+                            <input type="text" required placeholder="Tu nombre" class="w-full px-3 py-2 rounded-lg bg-cyber-bg border border-cyber-border text-xs focus:outline-none focus:border-purple-500 text-slate-200">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-mono text-slate-400 mb-1">Correo Electrónico</label>
+                            <input type="email" required placeholder="correo@ejemplo.com" class="w-full px-3 py-2 rounded-lg bg-cyber-bg border border-cyber-border text-xs focus:outline-none focus:border-purple-500 text-slate-200">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-mono text-slate-400 mb-1">Mensaje</label>
+                        <textarea rows="4" required placeholder="Escribe tu mensaje o consulta..." class="w-full px-3 py-2 rounded-lg bg-cyber-bg border border-cyber-border text-xs focus:outline-none focus:border-purple-500 text-slate-200 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <footer class="mt-12 pt-6 border-t border-cyber-border/40 text-center text-xs text-slate-500 font-mono">
+            © 2026 Saim Isidro Castillo • Portafolio de Ciberseguridad & Redes SENATI
+        </footer>
+    </section>
+
+    <!-- JS PARA ALTERNAR TEMA (CYBER DARK VS DEFENSIVE LIGHT) -->
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        const themePill = document.getElementById('theme-toggle-pill');
+        const themeTextDark = document.getElementById('theme-text-dark');
+        const themeTextLight = document.getElementById('theme-text-light');
+        const bodyRoot = document.getElementById('body-root');
+
+        let isDark = true;
+
+        themeBtn.addEventListener('click', () => {
+            isDark = !isDark;
+
+            if (isDark) {
+                bodyRoot.className = "bg-cyber-bg text-cyber-text font-sans antialiased selection:bg-purple-500 selection:text-white dark";
+                themePill.style.transform = "translateX(0px)";
+                themeTextDark.classList.remove('opacity-50');
+                themeTextLight.classList.add('opacity-50');
+                
+                document.querySelectorAll('.bg-cyber-card').forEach(el => {
+                    el.style.backgroundColor = '#130d24';
+                    el.style.borderColor = '#2a1b4e';
+                });
+                document.querySelectorAll('.bg-cyber-bg').forEach(el => {
+                    el.style.backgroundColor = '#0a0714';
+                });
+            } else {
+                bodyRoot.className = "bg-enterprise-bg text-enterprise-text font-sans antialiased selection:bg-sky-500 selection:text-white";
+                themePill.style.transform = "translateX(72px)";
+                themeTextDark.classList.add('opacity-50');
+                themeTextLight.classList.remove('opacity-50');
+
+                document.querySelectorAll('.bg-cyber-card').forEach(el => {
+                    el.style.backgroundColor = '#ffffff';
+                    el.style.borderColor = '#cbd5e1';
+                });
+                document.querySelectorAll('.bg-cyber-bg').forEach(el => {
+                    el.style.backgroundColor = '#f8fafc';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

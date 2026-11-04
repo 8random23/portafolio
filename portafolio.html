@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saim Isidro Castillo | Ciberseguridad y Redes</title>
+<meta name="description" content="Portafolio de Saim Isidro Castillo, estudiante de Ingeniería en Ciberseguridad en SENATI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0a1a; --panel:#17102b; --line:#2e2150; --text:#ece6ff; --muted:#a79cc9;
+  --accent:#a855f7; --accent-soft:#2a1650; --on-accent:#fff;
+  --sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+:root[data-theme="defensa"]{
+  --bg:#08131a; --panel:#0e1f2a; --line:#1c3a4b; --text:#e4f4fb; --muted:#8fb2c2;
+  --accent:#22d3ee; --accent-soft:#0c3342; --on-accent:#04222b;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;font-size:1.02rem}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h2{font-size:1.8rem;line-height:1.2;margin-bottom:.4rem}
+.lead{color:var(--muted);margin-bottom:2rem;max-width:42rem}
+
+/* barra superior */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.25rem;max-width:68rem;margin:0 auto}
+.brand{font-family:var(--mono);font-size:.9rem;text-decoration:none;color:var(--accent)}
+nav{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.92rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.theme{font-family:var(--mono);font-size:.8rem;background:var(--accent-soft);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:.35rem .8rem;cursor:pointer}
+.theme:hover{border-color:var(--accent)}
+
+/* inicio */
+.hero{padding:4rem 0 3rem}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:2.5rem;align-items:center}
+.status{display:inline-block;font-family:var(--mono);font-size:.8rem;color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);padding:.25rem .7rem;border-radius:999px;margin-bottom:1.1rem}
+h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:.8rem}
+.role{color:var(--accent);font-size:1.15rem;margin-bottom:1.2rem}
+.hero p.about-short{color:var(--muted);max-width:34rem;margin-bottom:1.6rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:500;padding:.7rem 1.2rem;border-radius:.5rem;border:1px solid var(--accent);cursor:pointer;font:inherit;font-weight:500}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{color:var(--text)}
+.btn:hover{filter:brightness(1.12)}
+.term{background:#07050f;border:1px solid var(--line);border-radius:.7rem;overflow:hidden;font-family:var(--mono);font-size:.82rem}
+:root[data-theme="defensa"] .term{background:#050d12}
+.term-top{display:flex;gap:.4rem;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.term-top i{width:.7rem;height:.7rem;border-radius:50%;background:var(--line)}
+.term pre{padding:1rem;white-space:pre-wrap;color:#d9ccff;min-height:12rem}
+:root[data-theme="defensa"] .term pre{color:#c9eef8}
+.term .prompt{color:var(--accent)}
+.caret{display:inline-block;width:.55em;height:1em;background:var(--accent);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* habilidades */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:.7rem;padding:1.2rem}
+.card h3{font-size:1.05rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.93rem}
+.soft{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
+.chip{border:1px solid var(--line);background:var(--accent-soft);border-radius:999px;padding:.4rem .9rem;font-size:.92rem}
+
+/* proyectos */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.2rem}
+.proj{background:var(--panel);border:1px solid var(--line);border-radius:.7rem;overflow:hidden;display:flex;flex-direction:column}
+.proj .shot{aspect-ratio:16/9;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--mono);font-size:.8rem;text-align:center;padding:1rem}
+.proj .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.proj .body{padding:1.1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.proj .kind{font-family:var(--mono);font-size:.78rem;color:var(--accent)}
+.proj h3{font-size:1.08rem;line-height:1.3}
+.proj p{color:var(--muted);font-size:.92rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem}
+.tags span{font-family:var(--mono);font-size:.74rem;border:1px solid var(--line);border-radius:.3rem;padding:.1rem .45rem;color:var(--muted)}
+.proj a.more{font-size:.9rem;color:var(--accent)}
+
+/* contacto */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem}
+.info{list-style:none;padding:0;display:grid;gap:.9rem;margin-top:1.2rem}
+.info li{display:flex;flex-direction:column}
+.info small{color:var(--muted);font-size:.82rem}
+.info a{text-decoration:none;font-weight:500}
+.info a:hover{color:var(--accent)}
+form{background:var(--panel);border:1px solid var(--line);border-radius:.7rem;padding:1.3rem;display:grid;gap:.9rem}
+label{display:grid;gap:.3rem;font-size:.88rem;color:var(--muted)}
+input,textarea{font:inherit;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:.45rem;padding:.65rem .75rem;width:100%}
+input:focus,textarea:focus{border-color:var(--accent);outline:none}
+textarea{min-height:8rem;resize:vertical}
+.note{font-size:.82rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.88rem;text-align:center}
+
+@media (max-width:820px){
+  .hero-grid,.contact{grid-template-columns:1fr}
+  nav{display:none}
+  section{padding:3.2rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.caret{animation:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#inicio" id="brand"></a>
+    <nav id="nav"></nav>
+    <button class="theme" id="themeBtn" type="button" aria-label="Cambiar tema"></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status" id="status"></span>
+        <h1 id="name"></h1>
+        <p class="role" id="role"></p>
+        <p class="about-short" id="short"></p>
+        <div class="btns">
+          <a class="btn primary" id="ctaMail" href="#contacto">Escríbeme</a>
+          <a class="btn ghost" href="#proyectos">Ver proyectos</a>
+        </div>
+      </div>
+      <div class="term" aria-hidden="true">
+        <div class="term-top"><i></i><i></i><i></i></div>
+        <pre id="term"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi">
+    <div class="wrap">
+      <h2>Sobre mí</h2>
+      <div id="about" class="lead"></div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap">
+      <h2>Habilidades técnicas</h2>
+      <p class="lead" id="skillsLead"></p>
+      <div class="grid" id="skills"></div>
+    </div>
+  </section>
+
+  <section id="blandas">
+    <div class="wrap">
+      <h2>Habilidades blandas</h2>
+      <div class="soft" id="soft"></div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2>Portafolio de proyectos</h2>
+      <p class="lead" id="projLead"></p>
+      <div class="projects" id="projects"></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap contact">
+      <div>
+        <h2>¿Hablamos?</h2>
+        <p class="lead" id="contactLead"></p>
+        <ul class="info" id="info"></ul>
+      </div>
+      <form id="form">
+        <label>Tu nombre<input name="n" required placeholder="Ej. Carlos Pérez"></label>
+        <label>Tu correo<input name="c" type="email" required placeholder="correo@empresa.com"></label>
+        <label>Mensaje<textarea name="m" required placeholder="Escribe tu mensaje"></textarea></label>
+        <button class="btn primary" type="submit">Enviar mensaje</button>
+        <p class="note">Se abrirá tu aplicación de correo con el mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap" id="footer"></div></footer>
+
+<script>
+/* ============================================================
+   EDITA SOLO ESTE BLOQUE. Cambia los textos entre comillas y
+   guarda el archivo. No necesitas tocar el resto del código.
+   ============================================================ */
+const CONFIG = {
+  nombre: "Saim Isidro Castillo",
+  marca: "saim@senati:~$",
+  rol: "Ingeniería en Ciberseguridad | SENATI",
+  estado: "Disponible para prácticas en ciberseguridad y redes",
+  resumen: "Estudiante de Ciberseguridad con formación en redes, sistemas Linux y laboratorios prácticos. Busco sumar a un equipo técnico y aprender desde el primer día.",
+
+  sobreMi: [
+    "Soy estudiante de Ingeniería en Ciberseguridad en SENATI Independencia (Lima). Mi formación combina teoría de redes con laboratorios donde configuro firewalls, VPN y herramientas de monitoreo.",
+    "Hago mi formación práctica en soporte técnico y videovigilancia, donde trabajo con equipos reales y atención a usuarios. En mi tiempo de estudio practico en máquinas de Hack The Box y armo laboratorios en VirtualBox, GNS3 y PNETLab."
+  ],
+
+  habilidadesIntro: "Lo que he practicado en clase, en laboratorios y en mis prácticas.",
+  habilidades: [
+    { titulo: "Fundamentos de ciberseguridad", texto: "Confidencialidad, integridad y disponibilidad, análisis de vulnerabilidades y buenas prácticas de protección." },
+    { titulo: "Redes y infraestructura", texto: "Direccionamiento IP, modelo OSI/TCP-IP, VLAN, ACL y simulación en Packet Tracer y GNS3." },
+    { titulo: "Seguridad en redes inalámbricas", texto: "Auditoría WPA2 con la suite Aircrack-ng en modo monitor, usando un adaptador USB compatible." },
+    { titulo: "Firewalls y VPN", texto: "Laboratorios con pfSense y FortiGate: NAT, reglas, IPsec y SD-WAN con monitoreo de SLA." },
+    { titulo: "Linux y pentesting", texto: "Línea de comandos en Kali y Ubuntu, enumeración y explotación en entornos controlados de Hack The Box." },
+    { titulo: "Monitoreo y logs", texto: "Envío de logs a Wazuh y revisión de eventos en laboratorios de detección." }
+  ],
+
+  blandas: ["Trabajo en equipo", "Puntualidad", "Adaptabilidad", "Responsabilidad", "Respeto", "Aprendizaje práctico"],
+
+  proyectosIntro: "Prácticas de laboratorio y auditorías realizadas en entornos propios o autorizados.",
+  /* imagen: pon la ruta o enlace de una captura (ej. "img/wifi.png"). Déjala vacía "" para mostrar el recuadro. */
+  proyectos: [
+    {
+      tipo: "Auditoría Wi-Fi",
+      titulo: "Ataque de diccionario a WPA2-PSK",
+      texto: "Captura del handshake EAPOL con Aircrack-ng y recuperación de la clave con un diccionario, en una red de laboratorio. Concluye con recomendaciones de claves robustas.",
+      etiquetas: ["Aircrack-ng", "Linux", "WPA2"],
+      imagen: "", enlace: ""
+    },
+    {
+      tipo: "Hack The Box",
+      titulo: "Máquina DevHub: de RCE a root",
+      texto: "Informe técnico de una máquina Linux: ejecución remota en un servicio MCP, pivote a otro usuario por un servicio interno y escalada a root. Incluye los intentos fallidos y sus causas.",
+      etiquetas: ["Pentesting", "Linux", "Informe"],
+      imagen: "", enlace: ""
+    },
+    {
+      tipo: "Redes y VPN",
+      titulo: "SD-WAN e IPsec con dos FortiGate",
+      texto: "Laboratorio en GNS3 con dos FortiGate: túnel IPsec, SD-WAN y reglas de SLA entre dos sedes simuladas.",
+      etiquetas: ["FortiGate", "GNS3", "IPsec"],
+      imagen: "", enlace: ""
+    },
+    {
+      tipo: "Firewall",
+      titulo: "Laboratorio pfSense con acceso remoto",
+      texto: "Firewall pfSense en VirtualBox con NAT, reglas de acceso y publicación de escritorio remoto hacia un equipo interno.",
+      etiquetas: ["pfSense", "VirtualBox", "NAT"],
+      imagen: "", enlace: ""
+    },
+    {
+      tipo: "Monitoreo SIEM",
+      titulo: "TestLab: Kuma, Wazuh y PNETLab",
+      texto: "Reto de laboratorio con topología VPN, monitoreo de disponibilidad con Kuma y envío de logs a Wazuh.",
+      etiquetas: ["Wazuh", "PNETLab", "VPN"],
+      imagen: "", enlace: ""
+    }
+  ],
+
+  contactoIntro: "Disponible para incorporarme como practicante en infraestructura, redes o ciberseguridad.",
+  contacto: {
+    institucion: "SENATI Independencia, Ingeniería en Ciberseguridad",
+    telefono: "956936679",
+    correo: "saimisidrocastillo@gmail.com",
+    ubicacion: "Lima, Perú"
+  },
+
+  /* Líneas que se "escriben" en la terminal del inicio */
+  terminal: [
+    "cat perfil.json",
+    '{\n  "rol": "estudiante",\n  "carrera": "Ciberseguridad",\n  "ciclo": "5.º",\n  "so": "Linux (Kali, Ubuntu)",\n  "busca": "prácticas en redes y seguridad"\n}'
+  ]
+};
+/* ================= FIN DEL BLOQUE EDITABLE ================= */
+
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
+const C = CONFIG;
+
+document.title = C.nombre + " | Ciberseguridad y Redes";
+$("brand").textContent = C.marca;
+$("name").textContent = C.nombre;
+$("role").textContent = C.rol;
+$("status").textContent = C.estado;
+$("short").textContent = C.resumen;
+$("ctaMail").href = "mailto:" + C.contacto.correo;
+$("footer").textContent = "© " + new Date().getFullYear() + " " + C.nombre + ". Hecho con HTML, CSS y JavaScript.";
+
+[["Sobre mí","sobre-mi"],["Habilidades","habilidades"],["Proyectos","proyectos"],["Contacto","contacto"]]
+  .forEach(([t,id]) => { const a = el("a","",t); a.href = "#" + id; $("nav").appendChild(a); });
+
+C.sobreMi.forEach(p => $("about").appendChild(el("p","",p)));
+$("about").querySelectorAll("p").forEach(p => p.style.marginBottom = "1rem");
+
+$("skillsLead").textContent = C.habilidadesIntro;
+C.habilidades.forEach(h => {
+  const c = el("div","card"); c.append(el("h3","",h.titulo), el("p","",h.texto)); $("skills").appendChild(c);
+});
+
+C.blandas.forEach(b => $("soft").appendChild(el("span","chip",b)));
+
+$("projLead").textContent = C.proyectosIntro;
+C.proyectos.forEach(p => {
+  const card = el("article","proj");
+  const shot = el("div","shot");
+  if (p.imagen) { const im = el("img"); im.src = p.imagen; im.alt = p.titulo; im.loading = "lazy"; shot.textContent = ""; shot.appendChild(im); }
+  else shot.textContent = "Aquí va una captura de “" + p.titulo + "”";
+  const body = el("div","body");
+  body.append(el("span","kind",p.tipo), el("h3","",p.titulo), el("p","",p.texto));
+  const tags = el("div","tags"); p.etiquetas.forEach(t => tags.appendChild(el("span","",t))); body.appendChild(tags);
+  if (p.enlace) { const a = el("a","more","Ver proyecto"); a.href = p.enlace; a.target = "_blank"; a.rel = "noopener"; body.appendChild(a); }
+  card.append(shot, body); $("projects").appendChild(card);
+});
+
+$("contactLead").textContent = C.contactoIntro;
+[["Institución", C.contacto.institucion],
+ ["Teléfono", C.contacto.telefono, "tel:" + C.contacto.telefono],
+ ["Correo", C.contacto.correo, "mailto:" + C.contacto.correo],
+ ["Ubicación", C.contacto.ubicacion]].forEach(([k,v,href]) => {
+  const li = el("li"); li.appendChild(el("small","",k));
+  if (href) { const a = el("a","",v); a.href = href; li.appendChild(a); } else li.appendChild(el("span","",v));
+  $("info").appendChild(li);
+});
+
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const cuerpo = f.get("m") + "\n\nDe: " + f.get("n") + " (" + f.get("c") + ")";
+  location.href = "mailto:" + C.contacto.correo + "?subject=" + encodeURIComponent("Contacto desde tu portafolio") + "&body=" + encodeURIComponent(cuerpo);
+});
+
+/* tema: Ciber (morado) y Defensa (azul). Se recuerda si el navegador lo permite. */
+const root = document.documentElement, btn = $("themeBtn");
+function setTheme(t){ if (t === "defensa") root.setAttribute("data-theme","defensa"); else root.removeAttribute("data-theme"); btn.textContent = t === "defensa" ? "Tema Ciber" : "Tema Defensa"; try{ localStorage.setItem("tema", t); }catch(e){} }
+let saved = "ciber"; try{ saved = localStorage.getItem("tema") || "ciber"; }catch(e){}
+setTheme(saved);
+btn.addEventListener("click", () => setTheme(root.hasAttribute("data-theme") ? "ciber" : "defensa"));
+
+/* terminal del inicio: se escribe una sola vez al cargar */
+(function(){
+  const out = $("term"), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cmd = C.terminal[0], res = C.terminal[1];
+  const prompt = C.marca + " ";
+  const caret = '<span class="caret"></span>';
+  const draw = (t, done) => { out.innerHTML = ""; const s = el("span","prompt",prompt); out.append(s, document.createTextNode(t)); if (done) out.append(document.createTextNode("\n" + res + "\n\n")), out.append(s.cloneNode(true)); out.insertAdjacentHTML("beforeend", caret); };
+  if (reduce) { draw(cmd, true); return; }
+  let i = 0; (function tick(){ draw(cmd.slice(0, i), false); if (i++ < cmd.length) setTimeout(tick, 70); else setTimeout(() => draw(cmd, true), 350); })();
+})();
+</script>
+</body>
+</html>
